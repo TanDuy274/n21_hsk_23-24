@@ -11,7 +11,9 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Login extends JFrame implements ActionListener{
@@ -46,7 +48,8 @@ public class Login extends JFrame implements ActionListener{
 		txtName.setPreferredSize(new Dimension(WIDTH, 26));
 		Box panelPass = Box.createVerticalBox();
 		lblPass = new JLabel("Mật khẩu:");
-		txtPass = new JTextField(25);
+//		txtPass = new JTextField(25);
+		txtPass = new JPasswordField(25);
 		txtPass.setPreferredSize(new Dimension(WIDTH, 26));
 		loginBtn = new JButton("Đăng nhập");
 		loginBtn.setPreferredSize(new Dimension(200, 34));
@@ -82,8 +85,16 @@ public class Login extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		setVisible(false);
-		new QLPhim().setVisible(true);
+		String username = txtName.getText();
+		String password = txtPass.getText();
+		if (username.equals("nhanvien1") && password.equals("NV123@")) {
+			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
+			new QLPhim().setVisible(true);
+		}else if (username.isEmpty() || password.isEmpty()){
+			JOptionPane.showMessageDialog(null, "Không để trống!");
+		}else
+			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
+			setVisible(false);
 		
 	}
 
