@@ -9,6 +9,11 @@ public class Ve {
 	public Ve() {
 		
 	}
+	
+	public Ve(String maVe) {
+		this.maVe = maVe;
+	}
+
 	public Ve(String maVe, String moTa, double giaTien, Phim phim, Ghe ghe) {
 		super();
 		this.maVe = maVe;

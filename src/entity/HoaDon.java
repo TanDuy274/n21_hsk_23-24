@@ -11,6 +11,11 @@ public class HoaDon {
 	public HoaDon() {
 		
 	}
+	
+	public HoaDon(String maHoaDon) {
+		this.maHoaDon = maHoaDon;
+	}
+
 	public HoaDon(String maHoaDon, Date ngayLapHoaDon, KhachHang khachHang, NhanVien nhanVien) {
 		super();
 		this.maHoaDon = maHoaDon;

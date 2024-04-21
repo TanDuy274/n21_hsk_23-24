@@ -7,6 +7,11 @@ public class Ghe {
 	public Ghe() {
 		
 	}
+	
+	public Ghe(String maGhe) {
+		this.maGhe = maGhe;
+	}
+
 	public Ghe(String maGhe, String tenGhe, boolean trangThai, Phong phong) {
 		super();
 		this.maGhe = maGhe;
@@ -26,7 +31,7 @@ public class Ghe {
 	public void setTenGhe(String tenGhe) {
 		this.tenGhe = tenGhe;
 	}
-	public boolean isTrangThai() {
+	public boolean getTrangThai() {
 		return trangThai;
 	}
 	public void setTrangThai(boolean trangThai) {

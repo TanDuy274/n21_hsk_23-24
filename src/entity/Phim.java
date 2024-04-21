@@ -12,6 +12,11 @@ public class Phim {
 	public Phim() {
 		
 	}
+	
+	public Phim(String maPhim) {
+		this.maPhim = maPhim;
+	}
+
 	public Phim(String maPhim, String tenPhim, String ngonNgu, Date ngayKhoiChieu, double thoiLuong, double giaTien,
 			int gioiHanDoTuoi, boolean trangThai, LoaiPhim loaiPhim) {
 		super();
@@ -67,7 +72,7 @@ public class Phim {
 	public void setGioiHanDoTuoi(int gioiHanDoTuoi) {
 		this.gioiHanDoTuoi = gioiHanDoTuoi;
 	}
-	public boolean isTrangThai() {
+	public boolean getTrangThai() {
 		return trangThai;
 	}
 	public void setTrangThai(boolean trangThai) {

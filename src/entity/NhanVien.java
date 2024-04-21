@@ -11,6 +11,10 @@ public class NhanVien {
 	public NhanVien() {
 		
 	}
+	
+	public NhanVien(String maNhanVien) {
+		this.maNhanVien = maNhanVien;
+	}
 
 	public NhanVien(String maNhanVien, String tenNhanVien, String soDienThoai, Date ngayVaoLam, double luong,
 			int tuoi) {

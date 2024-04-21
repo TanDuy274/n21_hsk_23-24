@@ -8,7 +8,7 @@ public class ConnectDB {
 	public static Connection con = null;
 	private static ConnectDB instance = new ConnectDB();
 	
-	public static ConnectDB getÍntance() {
+	public static ConnectDB getIntance() {
 		return instance;
 	}
 	public void connect() throws SQLException {
