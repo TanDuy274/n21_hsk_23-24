@@ -90,13 +90,11 @@ public class Login extends JFrame implements ActionListener{
 		if (username.equals("nhanvien1") && password.equals("NV123@")) {
 			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
 			new QLPhim().setVisible(true);
-		}else {
+		}else if (username.isEmpty() || password.isEmpty()){
+			JOptionPane.showMessageDialog(null, "Không để trống!");
+		}else
 			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
-		}
-		
-		
-		setVisible(false);
-		
+			setVisible(false);
 		
 	}
 
