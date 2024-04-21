@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -12,7 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener{
 
 	private JPanel pN;
 	private JPanel pC;
@@ -66,11 +68,23 @@ public class Login extends JFrame {
 		add(pC, BorderLayout.CENTER);
 		add(pS, BorderLayout.SOUTH);
 		
+		
+		
+		loginBtn.addActionListener(this);
+		
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new Login().setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		setVisible(false);
+		new QLPhim().setVisible(true);
+		
 	}
 
 }
