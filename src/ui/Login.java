@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Login extends JFrame implements ActionListener{
@@ -47,7 +48,8 @@ public class Login extends JFrame implements ActionListener{
 		txtName.setPreferredSize(new Dimension(WIDTH, 26));
 		Box panelPass = Box.createVerticalBox();
 		lblPass = new JLabel("Mật khẩu:");
-		txtPass = new JTextField(25);
+//		txtPass = new JTextField(25);
+		txtPass = new JPasswordField(25);
 		txtPass.setPreferredSize(new Dimension(WIDTH, 26));
 		loginBtn = new JButton("Đăng nhập");
 		loginBtn.setPreferredSize(new Dimension(200, 34));
