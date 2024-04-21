@@ -29,7 +29,7 @@ public class Login extends JFrame implements ActionListener {
 
     public Login() {
         setTitle("Đăng nhập");
-        setSize(600, 300);
+        setSize(600, 340);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -37,8 +37,9 @@ public class Login extends JFrame implements ActionListener {
         leftPanel = new JPanel();
         rightPanel = new JPanel();
         JPanel phim1 = new JPanel();
-        ImageIcon img7 = new ImageIcon("img/logo4.jpg");
-		Image scaled7 = scaleImage(img7.getImage(), 320, 300);
+//        ImageIcon img7 = new ImageIcon("img/logo4.jpg");
+        ImageIcon img7 = new ImageIcon("img/login1.jpg");
+        Image scaled7 = scaleImage(img7.getImage(), 320, 295); //chiều ngang, chiều cao
 		ImageIcon imgScaled7 = new ImageIcon(scaled7);
 		JLabel hinh7 = new JLabel(imgScaled7);
         leftPanel.add(hinh7);
@@ -50,7 +51,7 @@ public class Login extends JFrame implements ActionListener {
         lblTiTle = new JLabel("ĐĂNG NHẬP");
         Font = new Font("Arial", Font.BOLD, 20);
         lblTiTle.setFont(Font);
-        Color orangeDark = new Color(255, 128, 0); // Tạo màu cam tùy chỉnh
+        Color orangeDark = Color.decode("#F23C21"); // Tạo màu cam tùy chỉnh
         lblTiTle.setForeground(orangeDark);
         pnTitle.add(lblTiTle);
         
