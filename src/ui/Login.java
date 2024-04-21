@@ -3,10 +3,12 @@ package ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 public class Login extends JFrame implements ActionListener{
 
@@ -27,6 +30,7 @@ public class Login extends JFrame implements ActionListener{
 	private JLabel lblPass;
 	private JTextField txtPass;
 	private JButton loginBtn;
+	private JPanel pnLogin;
 
 	public Login() {
 		// TODO Auto-generated constructor stub
@@ -61,11 +65,14 @@ public class Login extends JFrame implements ActionListener{
 		panelPass.add(lblPass);
 		panelPass.add(Box.createVerticalStrut(10));
 		panelPass.add(txtPass);
+		pnLogin = new JPanel(new FlowLayout(FlowLayout.CENTER, 10,10));
+		pnLogin.add(loginBtn);
+		
 		
 		pN.add(lblTitel);
 		pC.add(panelName);
 		pC.add(panelPass);
-		pS.add(loginBtn);
+		pS.add(pnLogin);
 		
 		add(pN, BorderLayout.NORTH);
 		add(pC, BorderLayout.CENTER);
