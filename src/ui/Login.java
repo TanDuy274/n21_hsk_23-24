@@ -11,6 +11,7 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -82,8 +83,18 @@ public class Login extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		String username = txtName.getText();
+		String password = txtPass.getText();
+		if (username.equals("nhanvien1") && password.equals("NV123@")) {
+			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
+			new QLPhim().setVisible(true);
+		}else {
+			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
+		}
+		
+		
 		setVisible(false);
-		new QLPhim().setVisible(true);
+		
 		
 	}
 
