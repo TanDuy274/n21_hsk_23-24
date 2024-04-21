@@ -3,6 +3,11 @@ package entity;
 public class LoaiPhim {
 	private String maLoaiPhim,tenLoaiPhim,moTa;
 
+	
+	public LoaiPhim(String maLoaiPhim) {
+		this.maLoaiPhim = maLoaiPhim;
+	}
+
 	public LoaiPhim(String maLoaiPhim, String tenLoaiPhim, String moTa) {
 		super();
 		this.maLoaiPhim = maLoaiPhim;
