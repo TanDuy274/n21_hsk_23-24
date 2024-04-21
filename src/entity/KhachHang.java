@@ -7,6 +7,11 @@ public class KhachHang {
 	public KhachHang() {
 		
 	}
+	
+	public KhachHang(String maKhachHang) {
+		this.maKhachHang = maKhachHang;
+	}
+
 	public KhachHang(String maKhachHang, String tenKhachHang, String soDienThoai, int tuoi, boolean hasTheThanhVien) {
 		super();
 		this.maKhachHang = maKhachHang;
@@ -39,7 +44,7 @@ public class KhachHang {
 	public void setTuoi(int tuoi) {
 		this.tuoi = tuoi;
 	}
-	public boolean isHasTheThanhVien() {
+	public boolean hasTheThanhVien() {
 		return hasTheThanhVien;
 	}
 	public void setHasTheThanhVien(boolean hasTheThanhVien) {

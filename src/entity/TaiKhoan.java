@@ -1,12 +1,16 @@
 package entity;
 
+import java.util.Date;
+
 public class TaiKhoan {
 	private int id ;
-	private String taiKhoan,matKhau,ngayTao,isNhanVien;
+	private String taiKhoan,matKhau;
+	private Date ngayTao;
+	private boolean isNhanVien;
 	public TaiKhoan() {
 		
 	}
-	public TaiKhoan(int id, String taiKhoan, String matKhau, String ngayTao, String isNhanVien) {
+	public TaiKhoan(int id, String taiKhoan, String matKhau, Date ngayTao, boolean isNhanVien) {
 		super();
 		this.id = id;
 		this.taiKhoan = taiKhoan;
@@ -32,27 +36,17 @@ public class TaiKhoan {
 	public void setMatKhau(String matKhau) {
 		this.matKhau = matKhau;
 	}
-	public String getNgayTao() {
+	public Date getNgayTao() {
 		return ngayTao;
 	}
-	public void setNgayTao(String ngayTao) {
+	public void setNgayTao(Date ngayTao) {
 		this.ngayTao = ngayTao;
 	}
-	public String getIsNhanVien() {
+	public boolean isNhanVien() {
 		return isNhanVien;
 	}
-	public void setIsNhanVien(String isNhanVien) {
+	public void setNhanVien(boolean isNhanVien) {
 		this.isNhanVien = isNhanVien;
-	}
-	
-	public boolean checkTaiKhoan(String taiKhoan, String matKhau) {
-		return false;
-		
-	}
-	@Override
-	public String toString() {
-		return "TaiKhoan [id=" + id + ", taiKhoan=" + taiKhoan + ", matKhau=" + matKhau + ", ngayTao=" + ngayTao
-				+ ", isNhanVien=" + isNhanVien + "]";
 	}
 	
 }

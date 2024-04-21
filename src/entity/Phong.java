@@ -6,6 +6,11 @@ public class Phong {
 	public Phong() {
 		
 	}
+	
+	public Phong(String maPhong) {
+		this.maPhong = maPhong;
+	}
+
 	public Phong(String maPhong, String tenPhong, int soLuongGhe) {
 		super();
 		this.maPhong = maPhong;
