@@ -116,7 +116,7 @@ public class DangNhap extends JFrame implements ActionListener {
 			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
 			new GiaoDienChinh().setVisible(true);
 		}else if (username.isEmpty() || password.isEmpty()){
-			JOptionPane.showMessageDialog(null, "Không để trống!");
+			JOptionPane.showMessageDialog(null, "Không được để trống!");
 		}else
 			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
 			setVisible(false);
