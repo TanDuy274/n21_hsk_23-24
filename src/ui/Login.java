@@ -109,6 +109,17 @@ public class Login extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Xử lý sự kiện đăng nhập
-    }
+		// TODO Auto-generated method stub
+		String username = txtName.getText();
+		String password = txtPass.getText();
+		if (username.equals("nhanvien1") && password.equals("NV123@")) {
+			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
+			new QLPhim().setVisible(true);
+		}else if (username.isEmpty() || password.isEmpty()){
+			JOptionPane.showMessageDialog(null, "Không để trống!");
+		}else
+			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
+			setVisible(false);
+		
+	}
 }
