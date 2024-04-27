@@ -28,9 +28,10 @@ public class Phim_DAO {
 				String ngonNgu = rs.getString("ngonNgu");
 				Integer gioiHanTuoi = rs.getInt("gioiHanDoTuoi");
 				Integer trangThai =  rs.getInt("trangThai");
+				String poster = rs.getString("poster");
 				Double giaTien = rs.getDouble("giaTien");
 				LoaiPhim lp = new LoaiPhim(rs.getString("maLoaiPhim"));
-				Phim p = new Phim(maPhim, tenPhim, ngonNgu, ngayKhoiChieu, thoiLuong, giaTien, gioiHanTuoi, trangThai == 1 ? true : false, lp);
+				Phim p = new Phim(maPhim, tenPhim, ngonNgu, ngayKhoiChieu, thoiLuong, giaTien, gioiHanTuoi, trangThai == 1 ? true : false, poster, lp);
 				dsPhim.add(p);
 			}
 		} catch (SQLException e) {

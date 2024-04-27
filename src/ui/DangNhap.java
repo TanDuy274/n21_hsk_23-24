@@ -107,6 +107,9 @@ public class DangNhap extends JFrame implements ActionListener {
         new DangNhap().setVisible(true);
     }
 
+    /**
+     *
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -114,12 +117,18 @@ public class DangNhap extends JFrame implements ActionListener {
 		String password = txtPass.getText();
 		if (username.equals("nv") && password.equals("123")) {
 			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
+			setVisible(false);
 			new GiaoDienChinh().setVisible(true);
 		}else if (username.isEmpty() || password.isEmpty()){
 			JOptionPane.showMessageDialog(null, "Không được để trống!");
 		}else
 			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
-			setVisible(false);
+			txtName.setText("");
+			txtPass.setText("");
+			txtName.requestFocus();
+//			setVisible(false);
+
+//		new GiaoDienChinh().setVisible(true);
 		
 	}
 }

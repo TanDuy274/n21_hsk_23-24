@@ -26,7 +26,7 @@ public class QLPhim extends JFrame {
 	public QLPhim() {
 		setTitle("Quản lý phim");
 		setSize(1000, 700);
-		setResizable(false);
+//		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
@@ -42,7 +42,7 @@ public class QLPhim extends JFrame {
 		
 		JPanel phim1 = new JPanel();
 		JLabel tenPhim1 = new JLabel("Lật mặt 7");
-		ImageIcon img1 = new ImageIcon("img/latmat7.jpg");
+		ImageIcon img1 = new ImageIcon("img/lat-mat-7.jpg");
 //		h = w * 1.5
 		Image scaled1 = scaleImage(img1.getImage(), 190, 285);
 		ImageIcon imgScaled1 = new ImageIcon(scaled1);
