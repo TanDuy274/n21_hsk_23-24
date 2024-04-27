@@ -8,6 +8,7 @@ public class Phim {
 	private double thoiLuong,giaTien;
 	private int gioiHanDoTuoi;
 	private boolean trangThai;
+	private String poster;
 	private LoaiPhim loaiPhim;
 	public Phim() {
 		
@@ -17,8 +18,9 @@ public class Phim {
 		this.maPhim = maPhim;
 	}
 
+	
 	public Phim(String maPhim, String tenPhim, String ngonNgu, Date ngayKhoiChieu, double thoiLuong, double giaTien,
-			int gioiHanDoTuoi, boolean trangThai, LoaiPhim loaiPhim) {
+			int gioiHanDoTuoi, boolean trangThai, String poster, LoaiPhim loaiPhim) {
 		super();
 		this.maPhim = maPhim;
 		this.tenPhim = tenPhim;
@@ -28,8 +30,10 @@ public class Phim {
 		this.giaTien = giaTien;
 		this.gioiHanDoTuoi = gioiHanDoTuoi;
 		this.trangThai = trangThai;
+		this.poster = poster;
 		this.loaiPhim = loaiPhim;
 	}
+
 	public String getMaPhim() {
 		return maPhim;
 	}
@@ -78,17 +82,25 @@ public class Phim {
 	public void setTrangThai(boolean trangThai) {
 		this.trangThai = trangThai;
 	}
+	public String getPoster() {
+		return poster;
+	}
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
 	public LoaiPhim getLoaiPhim() {
 		return loaiPhim;
 	}
 	public void setLoaiPhim(LoaiPhim loaiPhim) {
 		this.loaiPhim = loaiPhim;
 	}
+
 	@Override
 	public String toString() {
 		return "Phim [maPhim=" + maPhim + ", tenPhim=" + tenPhim + ", ngonNgu=" + ngonNgu + ", ngayKhoiChieu="
 				+ ngayKhoiChieu + ", thoiLuong=" + thoiLuong + ", giaTien=" + giaTien + ", gioiHanDoTuoi="
-				+ gioiHanDoTuoi + ", trangThai=" + trangThai + ", loaiPhim=" + loaiPhim + "]";
+				+ gioiHanDoTuoi + ", trangThai=" + trangThai + ", poster=" + poster + ", loaiPhim=" + loaiPhim + "]";
 	}
+	
 	
 }
