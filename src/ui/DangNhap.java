@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Login extends JFrame implements ActionListener {
+public class DangNhap extends JFrame implements ActionListener {
 
     private JPanel leftPanel;
     private JPanel rightPanel;
@@ -27,7 +27,7 @@ public class Login extends JFrame implements ActionListener {
 	private JPanel pnPass1;
 	private JPanel pnPass2;
 
-    public Login() {
+    public DangNhap() {
         setTitle("Đăng nhập");
         setSize(600, 340);
         setResizable(false);
@@ -104,11 +104,31 @@ public class Login extends JFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-        new Login().setVisible(true);
+        new DangNhap().setVisible(true);
     }
 
+    /**
+     *
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Xử lý sự kiện đăng nhập
-    }
+		// TODO Auto-generated method stub
+		String username = txtName.getText();
+		String password = txtPass.getText();
+		if (username.equals("nv") && password.equals("123")) {
+			JOptionPane.showMessageDialog(null, "Đăng nhập thành công!");
+			setVisible(false);
+			new GiaoDienChinh().setVisible(true);
+		}else if (username.isEmpty() || password.isEmpty()){
+			JOptionPane.showMessageDialog(null, "Không được để trống!");
+		}else
+			JOptionPane.showMessageDialog(null, "Sai tên đăng nhập hoặc mật khẩu!");
+			txtName.setText("");
+			txtPass.setText("");
+			txtName.requestFocus();
+//			setVisible(false);
+
+//		new GiaoDienChinh().setVisible(true);
+		
+	}
 }
