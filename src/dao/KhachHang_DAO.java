@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,5 +32,55 @@ public class KhachHang_DAO {
 			e.printStackTrace();
 		}
 		return dskh;
+	}
+	
+	public boolean update(KhachHang kh) {
+		ConnectDB.getIntance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement stmt = null;
+		int n = 0;
+		try {
+			stmt = con.prepareStatement("update KhachHang set hasTheThanhVien = ?, tenKhachHang = ?, tuoi = ?, soDienThoai = ? where maKhachHang = ?");
+			stmt.setInt(1, kh.hasTheThanhVien() ? 1 : 0);
+			stmt.setString(2, kh.getTenKhachHang());
+			stmt.setInt(3, kh.getTuoi());
+			stmt.setString(4, kh.getSoDienThoai());
+			stmt.setString(5, kh.getMaKhachHang());
+			n = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
+	public ArrayList<KhachHang> timKiemKhachHangTheoTen(String ten) {
+		ArrayList<KhachHang> list = new ArrayList<KhachHang>();
+		ConnectDB.getIntance();
+		Connection con = ConnectDB.getConnection();
+		PreparedStatement statement = null;
+		try {
+			String sql = "select * from KhachHang where tenKhachHang = ?";
+			statement = con.prepareStatement(sql);
+			statement.setString(1, ten);
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				String ma = rs.getString("maKhachHang");
+				String tenKH = rs.getString("tenKhachHang");
+				Integer tuoi = rs.getInt("tuoi");
+				String dt = rs.getString("soDienThoai");
+				Integer ttv = rs.getInt("hasTheThanhVien");
+				KhachHang kh = new KhachHang(ma, tenKH, dt, tuoi, ttv == 1 ? true : false);
+				list.add(kh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
 	}
 }

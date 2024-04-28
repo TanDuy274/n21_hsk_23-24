@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class GiaoDienMenu extends JPanel {
+public class GiaoDienMenu extends JPanel implements ActionListener,MouseListener{
     private GiaoDienChinh mainFrame;
 	private JButton btnQuanLi;
 	private JLabel imageLabel;
@@ -157,6 +159,12 @@ public class GiaoDienMenu extends JPanel {
         
         
         setBackground(orangeDark); // Thay đổi màu nền thành màu cam
+        
+        
+        
+        lblDatVe.addMouseListener(this);
+        lblQLKhachhang.addMouseListener(this);
+        lblQuanLi.addMouseListener(this);
     }
 
     private Image scaleImage(Image image, int w, int h) {
@@ -176,4 +184,48 @@ public class GiaoDienMenu extends JPanel {
         });
         add(button);
     }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+        Object source = e.getSource();
+        if (source.equals(lblDatVe)) {
+            mainFrame.displayContent("QlBanVe");
+        } else if (source.equals(lblQLKhachhang)) {
+        	mainFrame.displayContent("QlKhachHang");
+        }else if (source.equals(lblQuanLi)) {
+        	mainFrame.displayContent("QlPhim");
+        }
+    }
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
