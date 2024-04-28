@@ -24,6 +24,10 @@ public class GiaoDienMenu extends JPanel {
 	private JPanel pnUserName;
 	private String nhanvien1;
 	private JLabel lblUserName;
+	private JButton btnDatVe;
+	private JButton btnQLKhachhang;
+	private JButton btnQLHoadon;
+	private JButton btnDangxuat;
 
     public GiaoDienMenu(GiaoDienChinh mainFrame) {
         this.mainFrame = mainFrame;
@@ -31,7 +35,7 @@ public class GiaoDienMenu extends JPanel {
         setPreferredSize(new Dimension(200, 600));
         
 //      màu cam chủ đạo: 
-        Color orangeDark = Color.decode("#F23C21"); // Tạo màu cam tùy chỉnh
+        Color orangeDark = Color.ORANGE;
 
 //      pnImgUser
         pnUer = new JPanel();
@@ -48,7 +52,7 @@ public class GiaoDienMenu extends JPanel {
         
         //panel Quản lí Phim
         //dùng sự kiện MouseListener cho từng panel chứa icon và label
-        pnQuanliPhim = new JPanel(new FlowLayout(FlowLayout.LEFT,20,10));
+        pnQuanliPhim = new JPanel(new FlowLayout(FlowLayout.LEFT,25,10));
 //        pnQuanliPhim.setBackground(Color.BLUE);
         pnQuanliPhim.setPreferredSize(new Dimension(190,50));
         
@@ -58,12 +62,16 @@ public class GiaoDienMenu extends JPanel {
         JLabel lblImgScaled = new JLabel(imgScaled);
         pnQuanliPhim.add(lblImgScaled);
         
-        lblQuanLi = new JLabel("Quản lý phim");
-        pnQuanliPhim.add(lblQuanLi);
+        btnQuanLi = new JButton("Quản lý phim");
+        btnQuanLi.setBorderPainted(false); // Tắt viền
+        btnQuanLi.setFocusPainted(false); // Tắt viền khi button được focus
+        btnQuanLi.setContentAreaFilled(false); // Tắt viền của khu vực nội dung
+        btnQuanLi.setMargin(new Insets(5, 0, 5, 0)); // Giảm độ rộng bao quanh nội dung
+        pnQuanliPhim.add(btnQuanLi);
         add(pnQuanliPhim);
         
 //      panel Đặt vé
-        pnDatVe = new JPanel(new FlowLayout(FlowLayout.LEFT,20,10));
+        pnDatVe = new JPanel(new FlowLayout(FlowLayout.LEFT,25,10));
 //      pnDatVe.setBackground(Color.BLUE);
         pnDatVe.setPreferredSize(new Dimension(190,50));
       
@@ -73,14 +81,18 @@ public class GiaoDienMenu extends JPanel {
         JLabel lblImgScaled2 = new JLabel(imgScaled2);
         pnDatVe.add(lblImgScaled2);
       
-        lblDatVe = new JLabel("Đặt vé");
-        pnDatVe.add(lblDatVe);
+        btnDatVe = new JButton("Đặt vé");
+        btnDatVe.setBorderPainted(false); // Tắt viền
+        btnDatVe.setFocusPainted(false); // Tắt viền khi button được focus
+        btnDatVe.setContentAreaFilled(false); 
+        btnDatVe.setMargin(new Insets(5, 0, 5, 0)); 
+        pnDatVe.add(btnDatVe);
         add(pnDatVe);
         
 
         
 //      panel QL Khách hàng
-        pnQLKhachHang = new JPanel(new FlowLayout(FlowLayout.LEFT,20,10));
+        pnQLKhachHang = new JPanel(new FlowLayout(FlowLayout.LEFT,25,10));
 //      pnQLKhachHang.setBackground(Color.BLUE);
         pnQLKhachHang.setPreferredSize(new Dimension(190,50));
       
@@ -90,13 +102,17 @@ public class GiaoDienMenu extends JPanel {
         JLabel lblImgScaled3 = new JLabel(imgScaled3);
         pnQLKhachHang.add(lblImgScaled3);
       
-        lblQLKhachhang = new JLabel("Quản lí khách hàng");
-        pnQLKhachHang.add(lblQLKhachhang);
+        btnQLKhachhang = new JButton("QL khách hàng");
+        btnQLKhachhang.setBorderPainted(false); // Tắt viền
+        btnQLKhachhang.setFocusPainted(false); // Tắt viền khi button được focus
+        btnQLKhachhang.setContentAreaFilled(false); 
+        btnQLKhachhang.setMargin(new Insets(5, 0, 5, 0));
+        pnQLKhachHang.add(btnQLKhachhang);
         add(pnQLKhachHang);
         
         
 //      panel QL Hóa đơn
-        pnQLHoaDon = new JPanel(new FlowLayout(FlowLayout.LEFT,20,10));
+        pnQLHoaDon = new JPanel(new FlowLayout(FlowLayout.LEFT,25,10));
 //      pnQLHoaDon.setBackground(Color.BLUE);
         pnQLHoaDon.setPreferredSize(new Dimension(190,50));
       
@@ -105,9 +121,13 @@ public class GiaoDienMenu extends JPanel {
         ImageIcon imgScaled4 = new ImageIcon(scaledQLHoadon);
         JLabel lblImgScaled4 = new JLabel(imgScaled4);
         pnQLHoaDon.add(lblImgScaled4);
-      
-        lblQLHoadon = new JLabel("Quản lí hóa đơn");
-        pnQLHoaDon.add(lblQLHoadon);
+        
+        btnQLHoadon = new JButton("QL hóa đơn");
+        btnQLHoadon.setBorderPainted(false); // Tắt viền
+        btnQLHoadon.setFocusPainted(false); // Tắt viền khi button được focus
+        btnQLHoadon.setContentAreaFilled(false); // Tắt viền của khu vực nội dung
+        btnQLHoadon.setMargin(new Insets(5, 0, 5, 0));
+        pnQLHoaDon.add(btnQLHoadon);
         add(pnQLHoaDon);
         
 //        panel đẩy
@@ -117,7 +137,7 @@ public class GiaoDienMenu extends JPanel {
         add(pnDay);
         
 //      panel Đăng xuất
-        pnDangxuat = new JPanel(new FlowLayout(FlowLayout.LEFT,20,10));
+        pnDangxuat = new JPanel(new FlowLayout(FlowLayout.LEFT,25,10));
 //      pnDangxuat.setBackground(Color.BLUE);
         pnDangxuat.setPreferredSize(new Dimension(190,50));
       
@@ -127,8 +147,12 @@ public class GiaoDienMenu extends JPanel {
         JLabel lblImgScaled5= new JLabel(imgScaled5);
         pnDangxuat.add(lblImgScaled5);
       
-        lblDangxuat = new JLabel("Đăng xuất");
-        pnDangxuat.add(lblDangxuat);
+        btnDangxuat = new JButton("Đăng xuất");
+        btnDangxuat.setBorderPainted(false); // Tắt viền
+        btnDangxuat.setFocusPainted(false); // Tắt viền khi button được focus
+        btnDangxuat.setContentAreaFilled(false); // Tắt viền của khu vực nội dung
+        btnDangxuat.setMargin(new Insets(5, 0, 5, 0));
+        pnDangxuat.add(btnDangxuat);
         add(pnDangxuat);
         
         
