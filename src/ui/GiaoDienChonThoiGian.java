@@ -348,7 +348,7 @@ public class GiaoDienChonThoiGian extends JPanel implements ActionListener {
         txtSoThoiGian = new JTextField(30);
                 
         // Đặt font cho các nhãn và ô nhập liệu
-        Font font1 = new Font("Arial", Font.BOLD, 17); // Ví dụ: Font Arial, in đậm, kích thước 14
+        Font font1 = new Font("Arial", Font.BOLD, 15); 
         lblSoPhong.setFont(font1);
         lblSoSuatChieu.setFont(font1);
         lblSoThoiGian.setFont(font1);

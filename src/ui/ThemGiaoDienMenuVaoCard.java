@@ -12,13 +12,13 @@ public class ThemGiaoDienMenuVaoCard extends JPanel {
         cardPanel = new JPanel(cardLayout);
 
         // Tạo các giao diện cho từng chức năng và thêm chúng vào CardLayout
-        MovieManagementPanel movieManagementPanel = new MovieManagementPanel();
+        QuanLyPhim movieManagementPanel = new QuanLyPhim();
         ChucNangDatVe ticketBookingPanel = new ChucNangDatVe();
         QuanLyKhachHang customerManagementPanel = new QuanLyKhachHang();
         
-        cardPanel.add(movieManagementPanel, "movieManagement");
-        cardPanel.add(ticketBookingPanel, "ticketBooking");
-        cardPanel.add(customerManagementPanel, "customerManagement");
+        cardPanel.add(movieManagementPanel, "QlPhim");
+        cardPanel.add(ticketBookingPanel, "QlBanVe");
+        cardPanel.add(customerManagementPanel, "QlKhachHang");
 
         setLayout(new BorderLayout());
         add(cardPanel, BorderLayout.CENTER);
